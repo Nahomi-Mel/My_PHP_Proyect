@@ -1,0 +1,14 @@
+<?php
+$host = "sql206.infinityfree.com";          // Cámbialo al host que te dieron
+$usuario = "if0_39097188";          // Tu usuario de base de datos
+$contrasena = "XGapzqSfJHFy";        // Tu contraseña
+$base_datos = "if0_39097188_biblioteca"; // Nombre completo de tu base
+
+$conexion = new mysqli($host, $usuario, $contrasena, $base_datos);
+
+// Verificar conexión
+if ($conexion->connect_error) {
+    die("Conexión fallida: " . $conexion->connect_error);
+}
+    echo "Conexión exitosa";
+?>
