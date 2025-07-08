@@ -4,21 +4,23 @@ include 'conexion.php';
 $action = $_POST['action'];
 $id = $_POST['id'];
 $NOMBRE = $_POST['NOMBRE'];
- $AUTOR = $_POST[ AUTOR'];
-CALIFICACION = $_POST[CALIFICACION'];
+$AUTOR = $_POST['AUTOR'];
+$CALIFICACION = $_POST['CALIFICACION'];
 $YEAR = $_POST['AÑO'];
 
 switch ($action) {
     case 'add':
-        $stmt = $conn->prepare("INSERT INTO empleados (NOMBRE, AUTOR,CALIFICACION, AÑO) VALUES (?, ?, ?, ?)");
-        $stmt->bind_param("ssdd", $NOMBRE,  $AUTOR, $CALIFICACION, $YEAR);
+        $stmt = $conn->prepare("INSERT INTO libros (NOMBRE, AUTOR, CALIFICACION, AÑO) VALUES (?, ?, ?, ?)");
+        $stmt->bind_param("ssdd", $NOMBRE, $AUTOR, $CALIFICACION, $YEAR);
         $stmt->execute();
         break;
+
     case 'update':
-        $stmt = $conn->prepare("UPDATE empleados SET NOMBRE = ?, AUTOR = ?,CALIFICACION = ?, AÑO = ? WHERE ID = ?");
-        $stmt->bind_param("ssddi", $NOMBRE,  $AUTOR, $CALIFICACION, $YEAR, $id);
+        $stmt = $conn->prepare("UPDATE libros SET NOMBRE = ?, AUTOR = ?, CALIFICACION = ?, AÑO = ? WHERE ID = ?");
+        $stmt->bind_param("ssddi", $NOMBRE, $AUTOR, $CALIFICACION, $YEAR, $id);
         $stmt->execute();
         break;
+
     case 'delete':
         $stmt = $conn->prepare("DELETE FROM libros WHERE ID = ?");
         $stmt->bind_param("i", $id);
