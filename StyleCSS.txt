@@ -56,14 +56,14 @@ button {
     padding: 10px 20px;
     margin-right: 10px;
     border: none;
-    background: #5cb85c;
-    color: #fff;
+    background: #fff;
+    color: rgb(255, 116, 167);
     cursor: pointer;
     border-radius: 5px;
 }
 
 button[type="submit"]:nth-child(3) {
-    background: #d9534f;
+    background: #000000;
 }
 
 table {
